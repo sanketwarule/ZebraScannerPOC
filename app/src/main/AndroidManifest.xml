@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.zebrascannerpoc">
+
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".application.Application"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ZebraScannerPOC">
+        <activity android:name=".MainActivity">
+
+        <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ScannersActivity" />
+        <activity android:name=".ActiveScannerActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_active_scanner"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="activities.ActiveScannerActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+                android:resource="@xml/device_filter" />
+        </activity>
+
+        <activity
+            android:name=".BaseActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_base">
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+                android:resource="@xml/device_filter" />
+        </activity>
+        <receiver
+            android:name=".receivers.NotificationsReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+
+                <!-- Actions to be handled should be registered here -->
+                <action android:name="com.zebra.scannercontrol.connected" />
+                <action android:name="com.zebra.scannercontrol.disconnected" />
+                <action android:name="com.zebra.scannercontrol.available" />
+                <action android:name="com.zebra.scannercontrol.conn.failed" />
+                <action android:name="com.zebra.scannercontrol.barcode.received" />
+                <action android:name="com.zebra.scannercontrol.image.received" />
+                <action android:name="com.zebra.scannercontrol.video.received" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

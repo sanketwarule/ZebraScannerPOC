@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">ZebraScannerPOC</string>
+    <string name="virtual_tether_notification_channel_id">virtual_tehther</string>
+    <string name="virtual_tether_notification_channel_name">Virtual Tether notification channel</string>
+    <string name="virtual_tether_notification_channel_description">Virtual Tether Notification Channel is used to alarm the user when the virtual tether event occurs.</string>
+    <string name="last_connected_scanner">Last Connected Scanner</string>
+    <string name="other_scanners">Other Scanners</string>
+    <string name="menu_add_scanner">Refresh device list</string>
+    <string name="instruction">Scan to connect</string>
+    <string name="get_bt_address_instruction1">Please Enter Your Bluetooth Address.</string>
+    <string name="get_bt_address_instruction_item_1"> Navigate to \"Settings > About Phone > Status > Bluetooth Address\" or </string>
+    <string name="get_bt_address_instruction_item_2">Then write down the Bluetooth address.</string>
+    <string name="get_bt_address_instruction_item_3">Hit back button until return to this screen.</string>
+    <string name="get_bt_address_instruction_item_4">Then type address below.</string>
+    <string name="cancel2">Cancel</string>
+    <string name="bluetooth_address">Bluetooth Address</string>
+    <string name="clear">Clear</string>
+    <string name="skip">Skip\n(If USB Corded)</string>
+    <string name="cancel">Cancel</string>
+    <string name="continue_txt">Continue</string>
+    <string name="clearList">Clear</string>
+    <string name="attribute_string">attribute</string>
+    <string name="please_wait_string">Please wait</string>
+    <string name="launch_instruction">This app supports Scan-To-Connect technology for 1-step pairing. </string>
+    <string name="launch_instruction_item_2">•         \tEnable / disable symbologies</string>
+    <string name="launch_instruction_item_1">•         \tProgram beeper and LEDs</string>
+    <string name="launch_instruction_item_3">•         \tRemotely trigger a scan</string>
+    <string name="launch_instruction_remaining">It displays scanned bar code data.</string>
+    <string name="launch_instruction_remaining_2">It can query scanner asset information &amp; battery health statistics.</string>
+    <string name="dont_show_this_again">Don\'t show this message again.</string>
+    <string name="launch_instruction2">It allows you to control your scanner:</string>
+    <string name="title_activity_active_scanner">Active Scanner</string>
+    <string name="title_activity_base">Home</string>
+</resources>
